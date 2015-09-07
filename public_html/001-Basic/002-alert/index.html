@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <title>ALERT</title>
@@ -12,12 +8,17 @@ and open the template in the editor.
         <!---->
         <!--Debido al sentido de lectura linear, primero carga el javascript y ejecuta lo que contenga, y luego continua leyendo el documento html, por ello primero se carga el alert y despues el contenido de la web. Proceso que sería a la inversa si ponemos el script antes del cierre del body-->
         <script>
-            alert('HOLA QUE TAL AMIGO');
+            var txt_alert = 'HOLA QUE TAL AMIGO';
+            alert(txt_alert);
+            
         </script>
     </head>
     <body>
         <h1>Mi primer Javascript</h1>
         <p>Esta página utiliza alert</p>
         <p>Un alert() es una función predefinida de javascript que pinta un mensaje por pantalla en modo de ventana emergente</p>
+        <h2>Llamada a una función:</h2>
+        <button onclick="get_date()">Fecha y hora</button>
+        <h3 id="fecha_hora"></h3>
     </body>
 </html>

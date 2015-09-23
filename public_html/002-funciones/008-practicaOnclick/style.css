@@ -1,0 +1,79 @@
+
+/*GLOBAL
+======================*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{height: 100%;}
+body{
+    font:1em/1.5 sans-serif;
+    padding: 10%;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+span{
+    color:#0092b2;
+}
+h2{
+ font-size: 1em;
+ margin-top: -10px;
+ margin-bottom: 20px;
+}
+h3{
+   color:#0092b2;
+   margin-bottom: 20px;
+}
+input{
+    padding: 10px;
+}
+.btn{
+    background: #0092b2;
+    color:#fff;
+    padding: 6px 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+#lista{
+    margin-top: 20px;
+}
+#lista li{
+    background: #ededed;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.remove{
+    display: none;
+}
+.top{
+    height:20%;
+}
+.saludo{
+    background: url( http://www.digitallearningpills.com/wp-content/uploads/2014/06/empatia_mediante_saludo.jpg) no-repeat center;
+    background-size: cover;
+    height: 80%;
+    line-height: 100px;
+    color: #fff;
+    font-size: 2em;
+}
+
+.dia{
+     background: url(http://escuelavaloresdivinos.com/blog/wp-content/uploads/2013/02/amanecer.jpg) no-repeat center;
+     background-size: cover;
+}
+
+.tarde{
+     background: url(http://www.ojodigital.com/foro/attachments/paisajes/15252d1200005045-solo-en-la-tarde-_mg_6171.jpg) no-repeat center;
+     background-size: cover;
+}
+.noche{
+    background: url(http://data.whicdn.com/images/36616971/original.jpg) no-repeat center;
+     background-size: cover;
+}

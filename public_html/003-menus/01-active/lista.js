@@ -8,8 +8,8 @@ var url = window.location.href;
 
 var enlaces = document.getElementsByTagName('header')[0].getElementsByTagName('nav')[0].getElementsByTagName('a');//array
 
-for(i=0;i<enlaces.lenght;i++){
+for(var i=0;i<enlaces.length;i++){
     if(enlaces[i].href == url){
-        enlaces[i].className == 'activo';
+        enlaces[i].className = 'activo';
     }
 }

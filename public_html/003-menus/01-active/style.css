@@ -21,7 +21,7 @@ a{
     transition: all 0.5s;
     border-radius: 5px;
 }
-a:hover, a.activo{
+header li a:hover, a.activo{
     background: #ccccff;
 }
 li{

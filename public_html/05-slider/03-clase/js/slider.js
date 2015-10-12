@@ -1,6 +1,28 @@
+
+function Foto(src, alt, title){
+    this.source = src;
+    this.description = alt;
+    this.titulo = title;
+}
+
+var f1 = new Foto('../img/foto1.jpg','foto very one','Foto One');
+var f2 = new Foto('../img/foto2.jpg','foto very two','Foto Two');
+var f3 = new Foto('../img/foto3.jpg','foto very three','Foto Three');
+
+/*Para poder tener contabilizados los nuevos objetos que se han creado, los almacenamos en un array*/
+
+var listaFotos = new Array(f1,f2,f3);
+
+/*A partir de aqui podemos crear los elementos del slider inyectándolo en el html en js*/
+var cont_divs = document.getElementById('content_divs');
+for(var i=0; i<listaFotos.length; i++){
+    cont_divs.innerHTML += '<div class="foto" style="background: url('+listaFotos[i].source+') no-repeat center; background-size: cover;"><h2>'+listaFotos[i].titulo+'</h2></div>';
+    
+    
+}
 var slider = document.getElementById('slider');
-var cont_img = document.getElementById('content_img');
-var images = cont_img.getElementsByTagName('img');
+var cont_img = document.getElementById('content_divs');
+var images = cont_img.getElementsByClassName('foto');
 var cont_bullet = document.getElementById('content_bullets');
 var bullets = document.getElementsByClassName('bullet');
 /*Para poder llamar a una misma función un numero indeterminado de veces usamos la funcion de JS setInterval()*/
@@ -14,7 +36,7 @@ function moveSlider(){
         position = 0;
     }
     cont_img.style.left = '-' + position + '%';
-    
+   
     /*Backgorund del bullet activo*/
     pos_bullet++; //Al igual que modificamos la posición de la imagen cada vez que se ejecuta la función moveSlider(), la posición del bullet aumenta acorde con ella
      console.log(images.length);

@@ -8,8 +8,7 @@
 }
 body{
     font:1em/1.5 sans-serif;
-
-
+   
 }
 main{
     padding: 5% 10%;
@@ -94,6 +93,26 @@ nav li a:hover, .activo{
      background: tomato;
 }
 
+/*MaSCARA*/
+#mascara{
+    background: rgba(0,0,0,.8);
+    width: 0%;
+    height: 0%;
+    position: absolute;
+    top: 50vh;
+    opacity: 1;
+    left: 0;
+    right: 0; 
+    margin: 0 auto;
+   opacity:0;
+   z-index: -1;
+    -webkit-transition: all 0.5s;
+}
+/*FancyPic*/
+#mascara .fancyPic{
+   
+   
+}
 
 /*MEDIA-----------------------*/
 

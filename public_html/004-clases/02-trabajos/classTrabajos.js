@@ -1,3 +1,7 @@
+
+/*Elementos de trabajo*/
+var sectionTrabajo = document.getElementById('trabajo');
+var mascara = document.getElementById('mascara');
 /*Creación de un menu Dinámico*/
 
 function Trabajo(src, title, alt, category) {
@@ -7,44 +11,90 @@ function Trabajo(src, title, alt, category) {
     this.categoria = category;
 }
 
-var t1 = new Trabajo('img/web1.jpg', 'Web Construcción', 'Descripción 1', 'web');
-var t2 = new Trabajo('img/web2.jpg', 'Web Agua', 'Descripción 2', 'web');
-var t3 = new Trabajo('img/web3.jpg', 'Web Stetic', 'Descripción 3', 'web');
-var t4 = new Trabajo('img/graphic1.jpg', 'Web Tipo', 'Descripción 4', 'graphic');
+var t1 = new Trabajo('img/china1.jpg', 'Web Construcción', 'Descripción 1', 'web');
+var t2 = new Trabajo('img/china2.jpg', 'Web Agua', 'Descripción 2', 'web');
+var t3 = new Trabajo('img/china3.jpg', 'Web Stetic', 'Descripción 3', 'web');
+var t4 = new Trabajo('img/china4.jpg', 'Web Tipo', 'Descripción 4', 'graphic');
 var t5 = new Trabajo('img/graphic2.jpg', 'Web Paul', 'Descripción 5', 'graphic');
 var t6 = new Trabajo('img/graphic3.jpg', 'Web 60', 'Descripción 6', 'graphic');
 
 
 /*Para saber cuantos objetos tengo, se puede asignar cada uno de ellos a un array para poder recorerlo*/
 var listaObjTrabajo = new Array(t1, t2, t3, t4, t5, t6);
-var sectionTrabajo = document.getElementById('trabajo');
+
+
 
 /*FILTRADO DE TRABAJOS*/
 mostrar('all');
 function mostrar(tipo) {
-    sectionTrabajo.innerHTML='';
+    sectionTrabajo.innerHTML = '';
+
     if (tipo === 'web' || tipo === 'graphic') {
         for (var i = 0; i < listaObjTrabajo.length; i++) {
-            if(listaObjTrabajo[i].categoria === tipo){
-                sectionTrabajo.innerHTML += "<article><img src='" + listaObjTrabajo[i].fuente + "' alt='" + listaObjTrabajo[i].descripcion + "'><span>" + listaObjTrabajo[i].titulo + "</span></article>";
+            if (listaObjTrabajo[i].categoria === tipo) {
+                sectionTrabajo.innerHTML += "<article onclick='fancyPicture("+i+")'><img src='" + listaObjTrabajo[i].fuente + "' alt='" + listaObjTrabajo[i].descripcion + " q'><span>" + listaObjTrabajo[i].titulo + "</span></article>";
             }
 
         }
     } else if (tipo === 'all') {
         for (var i = 0; i < listaObjTrabajo.length; i++) {
-            sectionTrabajo.innerHTML += "<article><img src='" + listaObjTrabajo[i].fuente + "' alt='" + listaObjTrabajo[i].descripcion + "'><span>" + listaObjTrabajo[i].titulo + "</span></article>";
+            sectionTrabajo.innerHTML += "<article onclick='fancyPicture("+i+")'><img src='" + listaObjTrabajo[i].fuente + "' alt='" + listaObjTrabajo[i].descripcion + "'><span>" + listaObjTrabajo[i].titulo + "</span></article>";
         }
     }
-     
+
 }
 
-/*Activar cada enlace que representa la página en la que nos encontramos. No podemos acceder al elemento className de listaObjMenu[i], ya que este atributo pertenece la etiqueta <a>, luego hemos de seleccionar dicha etiqueta para trabajar con ella:*/
+
+/*Creacion de la FancyBox*/
+var pickLinks = sectionTrabajo.getElementsByTagName('article');
 
 
-var botones = menuDinamico.getElementsByClassName('btn');
 
-for (var i = 0; i < botones.length; i++) {
-    if (botones[i].href === window.location.href) {
-        botones[i].className += ' activo';
-    }
+function fancyPicture(pos) {
+    mascara.style.width = '100%';
+    mascara.style.height = '100%';
+    mascara.style.top = '0';
+    mascara.style.opacity = '1';
+    mascara.style.zIndex = '2';
+    mascara.innerHTML = "<div class='fancyPic' style=' background: url("+listaObjTrabajo[pos].fuente+") no-repeat center; max-width: 70%;height: 100%; margin: 0 auto; background-size: contain; '></div>";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//console.log(pickLinks.length);
+//
+//for(var i=0; i<pickLinks.length; i++){  //Para cada elemento creado se habilita el evento onclick, para mostrar la mascara
+//    console.log(listaObjTrabajo[i].fuente );
+//    pickLinks[i].onclick = function(){
+//      
+//        mascara.style.width = '100%';
+//        mascara.style.height = '100%';
+//        mascara.style.top = '0';
+//        mascara.style.opacity = '1';
+//        mascara.style.zIndex = '2';
+//        mascara.innerHTML = '<div class="fancyPic" style=" background: url(img/china1.jpg) no-repeat center; max-width: 70%;height: 100%; margin: 0 auto; background-size: contain; "></div>';
+//    };
+//}
+
+
+mascara.onclick = function () {
+    mascara.style.width = '0%';
+    mascara.style.height = '0%';
+    mascara.style.top = '50vh';
+    mascara.style.opacity = '0';
+};
+//Se crea la máscara que servirá para enfocar la imagen y también para cerrar la foto
+
+
+

@@ -1,0 +1,40 @@
+
+/*GLOBAL
+======================*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font:1em/1.5 sans-serif;
+    padding: 10%;
+    padding-top:0;
+
+}
+header{
+    margin-bottom: 25px;
+    background: #6686a1;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+       display: inline-block;
+}
+
+header nav ul li h1{
+    cursor: pointer;
+ 
+    
+}
+header nav ul li h1:hover{
+    background: #ffcc66;
+}
+
+#noticias .foto{
+    width: 150px;
+    height: 150px;
+    background: #cdcdcd;
+}
